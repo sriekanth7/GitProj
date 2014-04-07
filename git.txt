@@ -1,0 +1,135 @@
+Difference between:
+1. Local Version Control Systems
+2. Centralized Version Control Systems and 
+3. Distributed Version Control Systems
+
+Commands:
+
+First-Time Git Setup:
+$ git config --global user.name "Srikanth"
+$ git config --global user.email ssrikanth@zeomega.com
+
+Checking the settings
+$ git config --list
+
+
+Initializing a Repository in an Existing Directory:
+
+$ mkdir mygitProject
+$ cd mygitProject/
+$ git init
+Initialized empty Git repository in /home/ssrikanth/mygitProject/.git/
+
+create a file:
+$ vim file1.py
+
+add newly created file to GIT:
+$ gid add *.py
+
+Edit the file file1.py:
+
+vim file1py
+
+
+see the Difference of the file file1.py with previous committ
+$ git diff file1.py 
+diff --git a/file1.py b/file1.py
+index 3f92224..a3f59d2 100644
+--- a/file1.py
++++ b/file1.py
+@@ -1,3 +1,3 @@
+ import datetime
+ import sys
+-
++import string
+
+Cloning an Existing Repository:
+git clone git@github.com:zeomega/jiva_buildout
+
+
+tracked, untracked, staged and committed commands:
+$ vim example.txt
+$ git add example.txt
+$ git diff --staged / $ git diff --cached (To see staged files which will go into next commit,)
+$ vim example2.txt
+$ git status
+
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   example.txt
+	modified:   file1.py
+	new file:   file2.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	example2.txt
+$ git add example2.txt
+
+$ git commit -m "third commit"
+$ git staus
+$ git rm --cached example.txt (I want to keep the file example.txt on hard drive but not to have Git track it anymore)
+ 
+ 
+Changing Your Last Commit:
+$ git commit -m 'initial commit'
+$ git add forgotten_file
+$ git commit --amend
+
+First-Time Git Setup:
+$ git config --global user.name "Srikanth"
+$ git config --global user.email ssrikanth@zeomega.com
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*****************************************************************************************************************************************************************************
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Initializing a Repository in an Existing Directory:
+
+$ mkdir mygitProject
+$ cd mygitProject/
+$ git init
+Initialized empty Git repository in /home/ssrikanth/mygitProject/.git/
+
+
+Checking the settings
+$ git config --list
+
+Cloning an Existing Repository:
+$ git clone ex : git clone git@github.com:zeomega/jiva_buildout
+
+Commands:
+$ git add
+$ git status
+$ git commit -m "some message"
+$ git log (Viewing the Commit History)
+$ git rm filename
+$ git rm --cached filename
+$ git mv file filenew
+$ git diff filename
+$ git diff --staged / $ git diff --cached (To see staged files which will go into next commit)
+$ git rm --cached example.txt (I want to keep the file example.txt on hard drive but not to have Git track it anymore)
+$ git commit --amend (Changing Your Last Commit)
+$ git checkout -- example2.txt (Unmodifying a Modified File)
+
+
+Remote
+
+git remote add origin git@github.com:sriekanth7/MyGitProject.git
+git remote -v
+git push origin master:master
+
+
+
+$ git remote -v
+$ git remote add origin https://github.com/sriekanth7/GitProj.git (THis is HTTPS clone URL, asks for GIT acc username & Password)
+$ git remote rm origin (To remove origin)
+$ git remote add origin git@github.com:sriekanth7/GitProj.git (SSH clone URL, will not ask for Username/Password)
+
+
+Do all staging, delete commit at local and finally push to GIT online account by using below command
+$ git push origin master:master
+
+
+
